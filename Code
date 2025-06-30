@@ -1,1 +1,22 @@
+library (jsonlite)
+library(rvest)
+library(ggplot2)
 
+# Load COPD datasets 
+  # 1. Demographic
+  demographics <- read.csv("https://raw.githubusercontent.com/khasenst/datasets_teaching/refs/heads/main/copd_data_demographics.csv")
+  
+  # 2. Medical images (turn into data frame)
+  imaging <- as.data.frame(fromJSON("https://raw.githubusercontent.com/khasenst/datasets_teaching/refs/heads/main/copd_data_imaging.json"))
+  
+  # 3. Load the COPDGene spirometry dataset as a data frame
+  html <- read_html("https://raw.githubusercontent.com/khasenst/datasets_teaching/refs/heads/main/copd_data_spirometry.html")
+  spirometry <- data.frame(html_table(html)[[1]])
+
+# Merge datasets
+    merged_data <- merge(demographics, imaging,
+                        all = TRUE)
+    merged_data <- merge(merged_data, spirometry,
+                        all = TRUE)
+
+  
