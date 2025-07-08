@@ -90,3 +90,10 @@ library(ggplot2)
     merged_data <- na.omit(merged_data)  
     sapply(merged_data, variable_input)
 
+# Plot histograms for each numeric / integer variables in the data frame. Take note of any variables that look skewed. 
+    for (i in (merged_data)){
+      if(is.numeric(i) || is.integer(i)) {
+        print(ggplot(data = merged_data, aes(x = log(i))) +
+          geom_histogram())
+      }
+    }
