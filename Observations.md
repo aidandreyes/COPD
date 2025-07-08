@@ -31,22 +31,18 @@ I tried to use the color dimension to observe if a patient's smoking status woul
 
 **Lines 185-215:**
 The 95% confidence interval for gender does not include zero, which indicates there is not a significant difference in fever 1 phase 2 between males and females.
-
 # -----------------------------------
 
 **Lines 217-247:**
 The 95% confidence interval for race does include zero, which indicates that there is a significant difference in fever 1 phase 2 between white and black patients.
-
 # -----------------------------------
 
 **Lines 249-279:**
 The 95% confidence interval for smoking status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between current and former smokers.
-
 # -----------------------------------
 
 **Lines 281-311:**
 The 95% confidence interval for emphysema status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between emphysema patients and non-emphysema patients.
-
 # -----------------------------------
 
 **Lines 313-343:**
