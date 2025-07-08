@@ -18,4 +18,4 @@ Only positive values would be within height's 95% confidence interval, reflectin
 
 The analysis revealed that variables such as age, height, race, and certain respiratory conditions are associated with FEV1_phase2 in COPD patients in the dataset. The results of this study suggest the influence of demographic and clinical characteristics in predicting COPD progression and may aid in identifying high-risk patients earlier.
 
-(Data is via https://copdgene.org/)
+(Data is via the COPDGene dataset: https://copdgene.org/)
