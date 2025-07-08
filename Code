@@ -90,10 +90,51 @@ library(ggplot2)
     merged_data <- na.omit(merged_data)  
     sapply(merged_data, variable_input)
 
-# Plot histograms for each numeric / integer variables in the data frame. Take note of any variables that look skewed. 
+# Use GGPLOT to plot histograms for each numeric / integer variables in the data frame. Take note of any variables that look skewed and transform them. 
     for (i in (merged_data)){
       if(is.numeric(i) || is.integer(i)) {
         print(ggplot(data = merged_data, aes(x = log(i))) +
           geom_histogram())
       }
     }
+
+# Use GGPLOT to visualize the relationship between the breathing function of the clinical trial participants after five years (fev1_phase2) and other categories in the data frame. (Gender, race, smoking status, emphysema, asthma)
+    # Gender
+    ggplot(merged_data, aes(x = factor(merged_data$gender), y = merged_data$fev1_phase2)) +
+      geom_boxplot() +
+      geom_jitter(width = 0.05, alpha = 0.5) +
+        labs(title = "Relationship between Patients with Fever 1 Phase 2 and Gender",
+              x = "Gender",
+              y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
+    
+    # Race
+    ggplot(merged_data, aes(x = factor(merged_data$race), y = merged_data$fev1_phase2)) +
+      geom_boxplot() +
+      geom_jitter(width = 0.05, alpha = 0.5) +
+        labs(title = "Relationship between Patients with Fever 1 Phase 2 and Race",
+              x = "Race",
+              y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
+    
+    # Smoking Status
+    ggplot(merged_data, aes(x = factor(merged_data$smoking_status), y = merged_data$fev1_phase2)) +
+      geom_boxplot() +
+      geom_jitter(width = 0.05, alpha = 0.5) +
+        labs(title = "Relationship between Patients with Fever 1 Phase 2 and Smoking Status",
+              x = "Smoking Status",
+              y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
+    
+    # Emphysema
+    ggplot(merged_data, aes(x = factor(merged_data$emphysema), y = merged_data$fev1_phase2)) +
+      geom_boxplot() +
+      geom_jitter(width = 0.05, alpha = 0.5) +
+        labs(title = "Relationship between Patients with Fever 1 Phase 2 and Emphysema",
+              x = "Emphysema",
+              y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
+    
+    # Asthma
+    ggplot(merged_data, aes(x = factor(merged_data$asthma), y = merged_data$fev1_phase2)) +
+      geom_boxplot() +
+      geom_jitter(width = 0.05, alpha = 0.5) +
+        labs(title = "Relationship between Patients with Fever 1 Phase 2 and Asthma",
+              x = "Asthma",
+              y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
