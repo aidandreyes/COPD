@@ -180,3 +180,36 @@ library(ggplot2)
            x = "Age (years)",
            y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
            color = "Gender")
+
+# A statistical test is conducted to analyze if there are significant differences in fev1_phase2 between the categories that were previously used. 
+    # Gender
+    males <- merged_data[merged_data$gender == "Male", ]
+    females <- merged_data[merged_data$gender == "Female", ]
+    boot_male <- vector(length = 1000)
+    boot_female <- vector(length = 1000)
+    gender_mean_diff <- vector(length = 1000)
+    
+    for (i in 1:1000) {
+      # sample for males
+      sample_male <- sample(males$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of male sample
+      mean_male <- mean(sample_male)
+    
+      # store means
+      boot_male[i] <- mean(mean_male)
+      # ----------
+      # sample for females
+      sample_female <- sample(females$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of female sample
+      mean_female <- mean(sample_female)
+    
+      # store means
+      boot_female[i] <- mean(mean_female)
+    
+      # store difference of means
+      gender_mean_diff[i] <- boot_male[i] - boot_female[i]
+    }
+    print("Confidence Interval for Difference in Fever 1 Phase 2 for Gender")
+    print(quantile(gender_mean_diff, probs = c(0.025, 0.975)))
