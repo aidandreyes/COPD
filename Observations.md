@@ -15,7 +15,7 @@ This boxplot showed the largest difference between its two categories in compari
 Asthma:
 There was a large difference in air exhaled for people in the asthma category. The interquartile range for those with asthma was greater than the interquartile range for those without asthma. Those with asthma also had a greater maximum value (approximately 5 liters) and median value (approximately 2.25 liters) as well. The results of this graph surprised me in a way similar to the emphysema graph as I expected patients with asthma to exhale less air due to problems of shortness with breath and more narrow airways.
 
-# -----------------------------------
+# 
 
 **Lines 142-182:**
 
@@ -27,23 +27,23 @@ The other categories did not show much of a relationship, if any at all. For wei
 
 I tried to use the color dimension to observe if a patient's smoking status would provide for greater context in finding a relationship between the variables. However, this only helped with the age category, as most former smokers tended to have lower values of volume exhaled in a second.
 
-# -----------------------------------
+# 
 
 **Lines 185-215:**
 The 95% confidence interval for gender does not include zero, which indicates there is not a significant difference in fever 1 phase 2 between males and females.
-# -----------------------------------
+# 
 
 **Lines 217-247:**
 The 95% confidence interval for race does include zero, which indicates that there is a significant difference in fever 1 phase 2 between white and black patients.
-# -----------------------------------
+# 
 
 **Lines 249-279:**
 The 95% confidence interval for smoking status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between current and former smokers.
-# -----------------------------------
+# 
 
 **Lines 281-311:**
 The 95% confidence interval for emphysema status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between emphysema patients and non-emphysema patients.
-# -----------------------------------
+# 
 
 **Lines 313-343:**
 The 95% confidence interval for asthma status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between asthma patients and non-asthma patients.
