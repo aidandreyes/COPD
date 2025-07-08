@@ -2,7 +2,7 @@ library (jsonlite)
 library(rvest)
 library(ggplot2)
 
-# Load COPD datasets 
+# Load COPD datasets from the COPDGene website
   # 1. Demographic
   demographics <- read.csv("https://raw.githubusercontent.com/khasenst/datasets_teaching/refs/heads/main/copd_data_demographics.csv")
   
