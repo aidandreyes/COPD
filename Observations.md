@@ -14,3 +14,15 @@ This boxplot showed the largest difference between its two categories in compari
 
 Asthma:
 There was a large difference in air exhaled for people in the asthma category. The interquartile range for those with asthma was greater than the interquartile range for those without asthma. Those with asthma also had a greater maximum value (approximately 5 liters) and median value (approximately 2.25 liters) as well. The results of this graph surprised me in a way similar to the emphysema graph as I expected patients with asthma to exhale less air due to problems of shortness with breath and more narrow airways.
+
+# ----------------------------------
+
+**Lines 142-182**
+
+These scatterplots observed relationships between Fever 1 Phase 2 and the categories of height (in inches), weight (in pounds), heart rate, body mass index, and age at the time of visit.
+
+The only categories that showed a linear relationship were height and age. For height, there was a positive linear relationship with Fever 1 Phase 2. Taller patients tended to be have a greater volume of air exhaled than shorter patients. For age, there was a negative linear relationship, where younger patients tended to have a greater volume of air exhaled than shorter patients.
+
+The other categories did not show much of a relationship, if any at all. For weight, there was too much variation among those in the 100-200 pounds range to fully say there was a linear relationship. For heart rate and BMI, there was a lack of spread in the graph to see a linear relationship.
+
+I tried to use the color dimension to observe if a patient's smoking status would provide for greater context in finding a relationship between the variables. However, this only helped with the age category, as most former smokers tended to have lower values of volume exhaled in a second.
