@@ -1,4 +1,4 @@
-**Lines 101-140**
+**Lines 101-140:**
 
 Gender:
 Male patients had a wider range of air forcefully exhaled in 1 second in comparison to female patients. Their minimums within the dataset were very similar, but ultimately, male patients had a higher maximum, inhaling close to 5 liters of air while the maximum female patient inhaled only 3.5 liters at most.
@@ -17,7 +17,7 @@ There was a large difference in air exhaled for people in the asthma category. T
 
 # -----------------------------------
 
-**Lines 142-182**
+**Lines 142-182:**
 
 These scatterplots observed relationships between Fever 1 Phase 2 and the categories of height (in inches), weight (in pounds), heart rate, body mass index, and age at the time of visit.
 
@@ -47,3 +47,13 @@ The 95% confidence interval for emphysema status does not include zero, which in
 
 **Lines 313-343:**
 The 95% confidence interval for asthma status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between asthma patients and non-asthma patients.
+
+**Lines 348-395:**
+
+The height and age categories were the only categories of the five with a slope significantly different from zero.
+
+Only positive values would be within height's 95% confidence interval. This reflects 95% confidence that the true population slope for height would be positive, suggesting a positive correlation between height and fever 1 phase 2. Meanwhile, only negative values were within age's 95% confidence interval, reflecting 95% confidence that the true population slope was negative and suggesting a negative correlation between age and fever 1 phase 2.
+
+However, zero was within the confidence intervals for the other three categories, signifying 95% confidence that the population slope would not be significantly different from zero. This suggests lack of correlation between each of the categories with fever 1 phase 2.
+
+This data reflects similar observations to the previous visual representation, as height and age were the only categories to show correlation on their respective scatterplots.
