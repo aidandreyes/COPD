@@ -181,7 +181,7 @@ library(ggplot2)
            y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
            color = "Gender")
 
-# A statistical test is conducted to analyze if there are significant differences in fev1_phase2 between the categories that were previously used. 
+# A statistical test is conducted to analyze if there are significant differences in fev1_phase2 between the categories that were previously used. (95% confidence interval)
     # Gender
     males <- merged_data[merged_data$gender == "Male", ]
     females <- merged_data[merged_data$gender == "Female", ]
