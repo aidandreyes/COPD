@@ -181,7 +181,7 @@ library(ggplot2)
            y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
            color = "Gender")
 
-# A statistical test is conducted to analyze if there are significant differences in fev1_phase2 between the categories that were previously used. (95% confidence interval)
+# A statistical test is conducted to analyze if there are significant differences in fev1_phase2 between the levels of the categories that were previously used. (95% confidence intervals)
     # Gender
     males <- merged_data[merged_data$gender == "Male", ]
     females <- merged_data[merged_data$gender == "Female", ]
@@ -213,3 +213,133 @@ library(ggplot2)
     }
     print("Confidence Interval for Difference in Fever 1 Phase 2 for Gender")
     print(quantile(gender_mean_diff, probs = c(0.025, 0.975)))
+
+    # Race
+    white <- merged_data[merged_data$race == "White", ]
+    black <- merged_data[merged_data$race == "Black or African American", ]
+    boot_white <- vector(length = 1000)
+    boot_black <- vector(length = 1000)
+    race_mean_diff <- vector(length = 1000)
+    
+    for (i in 1:1000) {
+      # sample for white
+      sample_white <- sample(white$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of white sample
+      mean_white <- mean(sample_white)
+    
+      # store means
+      boot_white[i] <- mean(mean_white)
+      # ----------
+      # sample for black
+      sample_black <- sample(black$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of black sample
+      mean_black <- mean(sample_black)
+    
+      # store means
+      boot_black[i] <- mean(mean_black)
+    
+      # store difference of means
+      race_mean_diff[i] <- boot_white[i] - boot_black[i]
+    }
+    print("Confidence Interval for Difference in Fever 1 Phase 2 for Race")
+    print(quantile(race_mean_diff, probs = c(0.025, 0.975)))
+
+    # Smoking Status
+    current <- merged_data[merged_data$smoking_status == "Current smoker", ]
+    former <- merged_data[merged_data$smoking_status == "Former smoker", ]
+    boot_current <- vector(length = 1000)
+    boot_former <- vector(length = 1000)
+    smoke_mean_diff <- vector(length = 1000)
+    
+    for (i in 1:1000) {
+      # sample for current smokers
+      sample_current <- sample(current$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of current smokers
+      mean_current <- mean(sample_current)
+    
+      # store means
+      boot_current[i] <- mean(mean_current)
+      # ----------
+      # sample for former smokers
+      sample_former <- sample(former$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of former smokers
+      mean_former <- mean(sample_former)
+    
+      # store means
+      boot_former[i] <- mean(mean_former)
+    
+      # store difference of means
+      smoke_mean_diff[i] <- boot_current[i] - boot_former[i]
+    }
+    print("Confidence Interval for Difference in Fever 1 Phase 2 for Smoking Status")
+    print(quantile(smoke_mean_diff, probs = c(0.025,0.975)))
+
+    # Emphysema
+    yes_emphysema <- merged_data[merged_data$emphysema == "Yes", ]
+    no_emphysema <- merged_data[merged_data$emphysema == "No", ]
+    boot_yes_emphysema <- vector(length = 1000)
+    boot_no_emphysema <- vector(length = 1000)
+    emphysema_mean_diff <- vector(length = 1000)
+    
+    for (i in 1:1000){
+      # sample for emphysema patients
+      sample_yes_emphysema <- sample(yes_emphysema$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of emphysema patients
+      mean_yes_emphysema <- mean(sample_yes_emphysema)
+    
+      # store means
+      boot_yes_emphysema[i] <- mean(mean_yes_emphysema)
+      # ----------
+      # sample for non-emphysema patients
+      sample_no_emphysema <- sample(no_emphysema$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of non-emphysema patients
+      mean_no_emphysema <- mean(sample_no_emphysema)
+    
+      # store means
+      boot_no_emphysema[i] <- mean(mean_no_emphysema)
+    
+      # store difference of means
+      emphysema_mean_diff[i] <- boot_yes_emphysema[i] - boot_no_emphysema[i]
+    }
+    print("Confidence Interval for Difference in Fever 1 Phase 2 for Emphysema Status")
+    print(quantile(emphysema_mean_diff, probs = c(0.025,0.975)))
+
+    # Asthma
+    yes_asthma <- merged_data[merged_data$asthma == "Yes", ]
+    no_asthma <- merged_data[merged_data$asthma == "No", ]
+    boot_yes_asthma <- vector(length = 1000)
+    boot_no_asthma <- vector(length = 1000)
+    asthma_mean_diff <- vector(length = 1000)
+    
+    for (i in 1:1000){
+      # sample for asthma patients
+      sample_yes_asthma <- sample(yes_asthma$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of asthma patients
+      mean_yes_asthma <- mean(sample_yes_asthma)
+    
+      # store means
+      boot_yes_asthma[i] <- mean(mean_yes_asthma)
+      # ----------
+      # sample for non-asthma patients
+      sample_no_asthma <- sample(no_asthma$fev1_phase2, size = 1000, replace = TRUE)
+    
+      # take mean of non-asthma patients
+      mean_no_asthma <- mean(sample_no_asthma)
+    
+      # store means
+      boot_no_asthma[i] <- mean(mean_no_asthma)
+    
+      # store difference of means
+      asthma_mean_diff[i] <- boot_yes_asthma[i] - boot_no_asthma[i]
+    }
+    print("Confidence Interval for Difference in Fever 1 Phase 2 for Asthma Status")
+    print(quantile(asthma_mean_diff, probs = c(0.025,0.975)))
+
+
