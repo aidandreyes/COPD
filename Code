@@ -19,4 +19,54 @@ library(ggplot2)
     merged_data <- merge(merged_data, spirometry,
                         all = TRUE)
 
-  
+# Convert the variables gender, race, and smoking_status to factors. Reassign the levels as well. 
+    merged_data$gender <- as.factor(merged_data$gender)
+    merged_data$race <- as.factor(merged_data$race)
+    merged_data$smoking_status <- as.factor(merged_data$smoking_status)
+    levels(merged_data$gender) <- c("Male", "Female")
+    levels(merged_data$race) <- c("White", "Black or African American")
+    levels(merged_data$smoking_status) = c("Former smoker", "Current smoker")
+
+# Convert height from centimeters to inches and weight from kilograms to pounds. 
+    merged_data$height_in <- merged_data$height_cm * (0.393701)
+    merged_data$weight_lb <- merged_data$weight_kg * (2.20462)
+
+# Use text processing to convert the respiratory variable into specific categories: hay fever, asthma, bronchitis attacks, chronic bronchitis, pneumonia, emphysema, COPD, and sleep apnea.
+    merged_data$hay_fever <- ifelse(grepl("hay_fever", merged_data$respiratory), "Yes", "No")
+    merged_data$asthma <- ifelse(grepl("asthma", merged_data$respiratory), "Yes", "No")
+    merged_data$bronchitis_attacks <- ifelse(grepl("bronchitis_attacks", merged_data$respiratory), "Yes", "No")
+    merged_data$chronic_bronchitis <- ifelse(grepl("chronic_bronchitis", merged_data$respiratory), "Yes", "No")
+    merged_data$pneumonia <- ifelse(grepl("pneumonia", merged_data$respiratory), "Yes", "No")
+    merged_data$emphysema <- ifelse(grepl("emphysema", merged_data$respiratory), "Yes", "No")
+    merged_data$copd <- ifelse(grepl("copd", merged_data$respiratory), "Yes", "No")
+    merged_data$sleep_apnea <- ifelse(grepl("sleep_apnea", merged_data$respiratory), "Yes", "No")
+
+# Convert the new variables into factors.
+    merged_data$hay_fever <- factor(merged_data$hay_fever)
+    levels(merged_data$hay_fever) <- c("Yes", "No")
+    
+    merged_data$asthma <- factor(merged_data$asthma)
+    levels(merged_data$asthma) <- c("Yes", "No")
+    
+    merged_data$bronchitis_attacks <- factor(merged_data$bronchitis_attacks)
+    levels(merged_data$bronchitis_attacks) <- c("Yes", "No")
+    
+    merged_data$chronic_bronchitis <- factor(merged_data$chronic_bronchitis)
+    levels(merged_data$chronic_bronchitis) <- c("Yes", "No")
+    
+    merged_data$pneumonia <- factor(merged_data$pneumonia)
+    levels(merged_data$pneumonia) <- c("Yes", "No")
+    
+    merged_data$emphysema <- factor(merged_data$emphysema)
+    levels(merged_data$emphysema) <- c("Yes", "No")
+    
+    merged_data$copd <- factor(merged_data$copd)
+    levels(merged_data$copd) <- c("Yes", "No")
+    
+    merged_data$sleep_apnea <- factor(merged_data$sleep_apnea)
+    levels(merged_data$sleep_apnea) <- c("Yes", "No")
+
+# Clean the data by removing the former height, weight and respiratory columns. These categories will no longer be needed because of the newly processed ones in the dataset.
+    merged_data <- merged_data[, -merged_data$height_cm]
+    merged_data <- merged_data[, -merged_data$weight_kg]
+    merged_data <- merged_data[, !(names(merged_data) == "respiratory")]
