@@ -98,7 +98,7 @@ library(ggplot2)
       }
     }
 
-# Use GGPLOT to visualize the relationship between the breathing function of the clinical trial participants after five years (fev1_phase2) and other categories in the data frame. (Gender, race, smoking status, emphysema, asthma)
+# GGPLOT used for boxplots to visualize the relationship between the breathing function of the clinical trial participants after five years (fev1_phase2) and other categories in the data frame. (Gender, race, smoking status, emphysema, asthma)
     # Gender
     ggplot(merged_data, aes(x = factor(merged_data$gender), y = merged_data$fev1_phase2)) +
       geom_boxplot() +
@@ -138,3 +138,45 @@ library(ggplot2)
         labs(title = "Relationship between Patients with Fever 1 Phase 2 and Asthma",
               x = "Asthma",
               y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (Liters)")
+
+# GGPLOT used for scatterplots that visualize the relationship between fev1_phase2 and numeric variables: height, weight, heart rate, BMI, and age. 
+# Gender variable is used as an additional color dimension. 
+    # Height, positive linear relationship
+    ggplot(merged_data, aes(x = merged_data$height_in, y = merged_data$fev1_phase2, color = merged_data$smoking_status)) +
+      geom_point() +
+      labs(title = "Relationship between Fever 1 Phase 2 and Height",
+           x = "Height (inches)",
+           y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
+           color = "Gender")
+    
+    # Weight, no linear relationship
+    ggplot(merged_data, aes(x = merged_data$weight_lb, y = merged_data$fev1_phase2, color = merged_data$smoking_status)) +
+      geom_point() +
+      labs(title = "Relationship between Fever 1 Phase 2 and Weight",
+           x = "Weight (lbs)",
+           y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
+           color = "Gender")
+    
+    # Heart Rate, no linear relationship
+    ggplot(merged_data, aes(x = merged_data$heart_rate, y = merged_data$fev1_phase2, color = merged_data$smoking_status)) +
+      geom_point() +
+      labs(title = "Relationship between Fever 1 Phase 2 and Heart Rate",
+           x = "Heart Rate",
+           y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
+           color = "Gender")
+    
+    # Body Mass Index, no linear relationship
+    ggplot(merged_data, aes(x = merged_data$bmi, y = merged_data$fev1_phase2, color = merged_data$smoking_status)) +
+      geom_point() +
+      labs(title = "Relationship between Fever 1 Phase 2 and BMI",
+           x = "BMI",
+           y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
+           color = "Gender")
+    
+    # Age, negative linear relationship but minimal
+    ggplot(merged_data, aes(x = merged_data$visit_age, y = merged_data$fev1_phase2, color = merged_data$smoking_status)) +
+      geom_point() +
+      labs(title = "Relationship between Fever 1 Phase 2 and Age",
+           x = "Age (years)",
+           y = "Fever 1 Phase 2: Volume of Air Exhaled in One Second (liters)",
+           color = "Gender")
