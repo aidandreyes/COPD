@@ -15,7 +15,7 @@ This boxplot showed the largest difference between its two categories in compari
 Asthma:
 There was a large difference in air exhaled for people in the asthma category. The interquartile range for those with asthma was greater than the interquartile range for those without asthma. Those with asthma also had a greater maximum value (approximately 5 liters) and median value (approximately 2.25 liters) as well. The results of this graph surprised me in a way similar to the emphysema graph as I expected patients with asthma to exhale less air due to problems of shortness with breath and more narrow airways.
 
-# ----------------------------------
+# -----------------------------------
 
 **Lines 142-182**
 
