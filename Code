@@ -75,13 +75,18 @@ library(ggplot2)
     write.csv(merged_data, "copd_data.csv", row.names = TRUE)
 
 # Variable input function: This function takes a single variable/column from the data frame as the input. 
-**# Returns both the mean and standard deviation for numeric variables and the frequency count for character and factor variables.**
+# Returns both the mean and standard deviation for numeric variables and the frequency count for character and factor variables.
     variable_input <- function(variable) {
       if (is.numeric(variable) || is.integer(variable)) {
           return (c(mean(variable), sd(variable)))
       }
-    
       if (is.character(variable) || is.factor(variable)) {
           return(table(variable))
       }
     }
+
+# Apply the input function to the entire data frame to find any observations with NA values. Remove those rows and reapply the input function again. 
+    sapply(merged_data, variable_input)
+    merged_data <- na.omit(merged_data)  
+    sapply(merged_data, variable_input)
+
