@@ -26,3 +26,25 @@ The only categories that showed a linear relationship were height and age. For h
 The other categories did not show much of a relationship, if any at all. For weight, there was too much variation among those in the 100-200 pounds range to fully say there was a linear relationship. For heart rate and BMI, there was a lack of spread in the graph to see a linear relationship.
 
 I tried to use the color dimension to observe if a patient's smoking status would provide for greater context in finding a relationship between the variables. However, this only helped with the age category, as most former smokers tended to have lower values of volume exhaled in a second.
+
+# -----------------------------------
+
+**Lines 185-215**
+
+The 95% confidence interval for gender does not include zero, which indicates there is not a significant difference in fever 1 phase 2 between males and females.
+
+
+**Lines 217-247**
+The 95% confidence interval for race does include zero, which indicates that there is a significant difference in fever 1 phase 2 between white and black patients.
+
+
+**Lines 249-279**
+The 95% confidence interval for smoking status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between current and former smokers.
+
+
+**Lines 281-311**
+The 95% confidence interval for emphysema status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between emphysema patients and non-emphysema patients.
+
+
+**Lines 313-343**
+The 95% confidence interval for asthma status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between asthma patients and non-asthma patients.
