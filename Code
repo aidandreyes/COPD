@@ -70,3 +70,18 @@ library(ggplot2)
     merged_data <- merged_data[, -merged_data$height_cm]
     merged_data <- merged_data[, -merged_data$weight_kg]
     merged_data <- merged_data[, !(names(merged_data) == "respiratory")]
+
+# Export the data frame as a .csv file.
+    write.csv(merged_data, "copd_data.csv", row.names = TRUE)
+
+# Variable input function: This function takes a single variable/column from the data frame as the input. 
+**# Returns both the mean and standard deviation for numeric variables and the frequency count for character and factor variables.**
+    variable_input <- function(variable) {
+      if (is.numeric(variable) || is.integer(variable)) {
+          return (c(mean(variable), sd(variable)))
+      }
+    
+      if (is.character(variable) || is.factor(variable)) {
+          return(table(variable))
+      }
+    }
