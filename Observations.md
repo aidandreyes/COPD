@@ -47,7 +47,7 @@ The 95% confidence interval for emphysema status does not include zero, which in
 
 **Lines 313-343:**
 The 95% confidence interval for asthma status does not include zero, which indicates that there is not a significant difference in fever 1 phase 2 between asthma patients and non-asthma patients.
-# -----------------------------------
+# 
 **Lines 348-395:**
 
 The height and age categories were the only categories of the five with a slope significantly different from zero.
