@@ -342,4 +342,54 @@ library(ggplot2)
     print("Confidence Interval for Difference in Fever 1 Phase 2 for Asthma Status")
     print(quantile(asthma_mean_diff, probs = c(0.025,0.975)))
 
+# Linear regression lines were created for each scatterplot using the previous variables of height, weight, heart rate, BMI, and age.
+# Statistical tests were conducted (95% confidence intervals) to determine if the slopes were significantly different from 0 to examine correlation between Fever 1 Phase 2 and the numeric variables.
+    # Create vectors
+    slopes_height <- vector(length = 1000)
+    slopes_weight <- vector(length = 1000)
+    slopes_heart_rate <- vector(length = 1000)
+    slopes_bmi <- vector(length = 1000)
+    slopes_visit_age <- vector(length = 1000)
+    
+    for (i in 1:1000) {
+      # Sample indexes
+      boot_indexes <- sample (1:nrow(merged_data), size = 1000, replace = TRUE)
+    
+      # Bootstrap sample
+      boot_sample_2 <- merged_data[boot_indexes, ]
+    
+      # Create regression line for each category
+      fit_height <- lm (fev1_phase2 ~ height_in, boot_sample_2)
+      fit_weight <- lm (fev1_phase2 ~ weight_lb, boot_sample_2)
+      fit_heart_rate <- lm (fev1_phase2 ~ heart_rate, boot_sample_2)
+      fit_bmi <- lm (fev1_phase2 ~ bmi, boot_sample_2)
+      fit_visit_age <- lm (fev1_phase2 ~ visit_age, boot_sample_2)
+    
+      # Store regression coefficients
+      slopes_height[i] <- coef(fit_height)[2]
+      slopes_weight[i] <- coef(fit_weight)[2]
+      slopes_heart_rate[i] <- coef(fit_heart_rate)[2]
+      slopes_bmi[i] <- coef(fit_bmi)[2]
+      slopes_visit_age[i] <- coef(fit_visit_age)[2]
+    }
 
+  # Statistical tests
+      # Height
+      print("Confidence Interval for Slope of Height (inches)")
+      print(quantile(slopes_height, probs = c(0.025, 0.975)))
+      
+      # Weight
+      print("Confidence Interval for Slope of Weight (lbs)")
+      print(quantile(slopes_weight, probs = c(0.025, 0.975)))
+      
+      # Heart Rate
+      print("Confidence Interval for Slope of Heart Rate")
+      print(quantile(slopes_heart_rate, probs = c(0.025, 0.975)))
+      
+      # BMI
+      print("Confidence Interval for Slope of BMI")
+      print(quantile(slopes_bmi, probs = c(0.025, 0.975)))
+      
+      # Visit Age
+      print("Confidence Interval for Slope of Visit Age")
+      print(quantile(slopes_visit_age, probs = c(0.025, 0.975)))
