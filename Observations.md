@@ -60,6 +60,21 @@ The 95% confidence interval for asthma status does not include zero, which indic
 # 
 **Lines 348-395:**
 
+Confidence Interval for Slope of Height (inches): (0.08789432,  0.11238381)
+
+
+Confidence Interval for Slope of Weight (lbs): (0.003059147,  0.005552061)
+
+
+Confidence Interval for Slope of Heart Rate: (-0.013670538,  -0.005165759)
+
+
+"Confidence Interval for Slope of BMI: (-0.010198350,  0.007756335)
+
+
+Confidence Interval for Slope of Visit Age: (-0.03725624,  -0.02660256)
+
+
 The height and age categories were the only categories of the five with a slope significantly different from zero.
 
 Only positive values would be within height's 95% confidence interval. This reflects 95% confidence that the true population slope for height would be positive, suggesting a positive correlation between height and fever 1 phase 2. Meanwhile, only negative values were within age's 95% confidence interval, reflecting 95% confidence that the true population slope was negative and suggesting a negative correlation between age and fever 1 phase 2.
