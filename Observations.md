@@ -32,7 +32,7 @@ I tried to use the color dimension to observe if a patient's smoking status woul
 **Lines 185-215:**
 The 95% confidence interval for gender does not include zero, which indicates there is not a significant difference in fever 1 phase 2 between males and females. 
 
-(2.5%: 0.5574645     97.5%: 0.6887909)
+(0.5574645, 0.6887909)
 # 
 
 **Lines 217-247:**
