@@ -21,7 +21,7 @@ There was a large difference in air exhaled for people in the asthma category. T
 
 These scatterplots observed relationships between Fever 1 Phase 2 and the categories of height (in inches), weight (in pounds), heart rate, body mass index, and age at the time of visit.
 
-The only categories that showed a linear relationship were height and age. For height, there was a positive linear relationship with Fever 1 Phase 2. Taller patients tended to be have a greater volume of air exhaled than shorter patients. For age, there was a negative linear relationship, where younger patients tended to have a greater volume of air exhaled than shorter patients.
+The only categories that showed a linear relationship (before adding the line of best fit) were height and age. For height, there was a positive linear relationship with Fever 1 Phase 2. Taller patients tended to be have a greater volume of air exhaled than shorter patients. For age, there was a negative linear relationship, where younger patients tended to have a greater volume of air exhaled than shorter patients.
 
 The other categories did not show much of a relationship, if any at all. For weight, there was too much variation among those in the 100-200 pounds range to fully say there was a linear relationship. For heart rate and BMI, there was a lack of spread in the graph to see a linear relationship.
 
