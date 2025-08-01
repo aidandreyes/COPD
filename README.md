@@ -3,3 +3,5 @@
 COPD refers to chronic obstructive pulmonary disease; a group of progressive lung diseases that blocks airflow and makes it difficult for people to breathe. It affects millions of Americans and is one of the leading causes of death along with conditions such as heart disease and cancer. COPD is commonly caused by long-term exposure to toxic substances and is specifically associated with cigarette smoking.
 
 This study seeks to investigate the relationship between lung function over time by analyzing Forced Expiratory Volume in one second (FEV1), along with other given categories in the data. The objective is to determine which categories would help predict FEV1 five years later (FEV1_phase2). Identifying these associations can provide valuable insight into how COPD progresses. The data analyzed was obtained from the COPDGene research group study, which includes spirometry data on thousands of research participants. Variables range from basic identifiers such as gender, race, and age, to more elaborate details such as smoking status, BMI, respiratory disease status, and more.
+
+(Data is via the COPDGene dataset: https://copdgene.org/)
